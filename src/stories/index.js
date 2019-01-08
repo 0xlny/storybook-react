@@ -1,12 +1,10 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { linkTo } from '@storybook/addon-links';
-
-import { Button, Welcome } from '@storybook/react/demo';
 import TrendChart from "../component/trend_chart/TrendChart";
+import Welcome from "../component/welcome/Welcome";
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf('Welcome', module).add('index', () => <Welcome/>);
 
 storiesOf('TrendChart', module)
   .add('chart (positive)', () => <TrendChart
