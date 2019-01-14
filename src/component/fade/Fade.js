@@ -6,7 +6,8 @@ class Fade extends Component {
     constructor(props){
         super(props);
         this.state = {
-            currentActive: 0
+            currentActive: 0,
+            colors: ['green', 'blue', 'beach', 'mint', 'pink', 'purple']
         };
     }
 
@@ -14,11 +15,11 @@ class Fade extends Component {
         const me = this;
         let first = true;
         function fade() {
-            me.setState({currentActive: (me.state.currentActive + 1) % 6});
+            me.setState({currentActive: (me.state.currentActive + 1) % me.state.colors.length});
             setTimeout(function () {
-                first = false;
                 fade();
             }, first ? 0 : 5000);
+            first = false;
         }
         fade();
     }
@@ -26,12 +27,9 @@ class Fade extends Component {
     render() {
         return (
             <div className={"fade-component" + (this.props.isBackground ? ' background' : ' component')}>
-                <div className={'green' + (this.state && this.state.currentActive === 0 ? ' current' : '')}/>
-                <div className={'blue' + (this.state && this.state.currentActive === 1 ? ' current' : '')}/>
-                <div className={'beach' + (this.state && this.state.currentActive === 2 ? ' current' : '')}/>
-                <div className={'mint' + (this.state && this.state.currentActive === 3 ? ' current' : '')}/>
-                <div className={'pink' + (this.state && this.state.currentActive === 4 ? ' current' : '')}/>
-                <div className={'purple' + (this.state && this.state.currentActive === 5 ? ' current' : '')}/>
+                {   this.state && this.state.colors &&
+                    this.state.colors.map((el, i) => <div key={i} className={el + (this.state && this.state.currentActive === i ? ' current' : '')}/>)
+                }
             </div>
         );
     }
