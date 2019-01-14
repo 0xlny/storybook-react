@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import TrendChart from "../component/trend_chart/TrendChart";
 import Welcome from "../component/welcome/Welcome";
+import Fade from "../component/fade/Fade";
 
 storiesOf('Welcome', module).add('index', () => <Welcome/>);
 
@@ -17,3 +18,7 @@ storiesOf('TrendChart', module)
         width={400}
         height={400}
     />);
+
+storiesOf('Fade', module)
+    .add('Fade background', () => <Fade isBackground={true}/>)
+    .add('Fade component', () => <Fade isBackground={false}/>);
