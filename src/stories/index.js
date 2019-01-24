@@ -9,11 +9,11 @@ import MaterialRadio from "../component/material_radio_button/MaterialRadio";
 storiesOf('Welcome', module).add('index', () => <Welcome/>);
 
 storiesOf('TrendChart', module)
-  .add('chart (positive)', () => <TrendChart
-    data={[12, 20, 37, 14, 34, 41]}
-    width={400}
-    height={400}
-  />)
+    .add('chart (positive)', () => <TrendChart
+        data={[12, 20, 37, 14, 34, 41]}
+        width={400}
+        height={400}
+    />)
     .add('chart (negative)', () => <TrendChart
         data={[12, 20, 37, 14, 34, 41].reverse()}
         width={400}
