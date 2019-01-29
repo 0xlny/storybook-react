@@ -1,6 +1,6 @@
 ## Instagram code example
 
-This project regroup all codes posts from lenny.codes profile on Instagram.
+This project regroup all ReactJS Components codes from lenny.codes profile on Instagram.
 
 ### Sources
 
