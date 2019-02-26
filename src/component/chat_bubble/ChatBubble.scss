@@ -1,0 +1,72 @@
+.chat-bubble{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  position: relative;
+  height: 150px;
+  width: 350px;
+
+  .user{
+    img{
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+      position: absolute;
+      top: -44px;
+    }
+  }
+
+  .bubble{
+    font-size: 13px;
+    font-weight: 600;
+    max-width: 240px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+  .bubble::before{
+    content: '';
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -8px;
+  }
+}
+
+.chat-bubble.left{
+  .user{
+    img{
+      left: 0px;
+    }
+  }
+
+  .bubble{
+    padding: 16px 26px 16px 26px;
+    text-align: left;
+    border-radius: 0 20px 20px 20px;
+  }
+
+  .bubble::before{
+    background: url('./left_chevron.svg') no-repeat;
+    background-size: 40px;
+    left: 0;
+  }
+}
+
+.chat-bubble.right{
+  .user{
+    img{
+      right: 0px;
+    }
+  }
+
+  .bubble{
+    float: right;
+    padding: 16px 26px 16px 26px;
+    text-align: right;
+    border-radius: 20px 0 20px 20px;
+  }
+
+  .bubble::before{
+    background: url('./right_chevron.svg') no-repeat;
+    background-size: 40px;
+    right: 0;
+  }
+}
